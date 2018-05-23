@@ -18,8 +18,8 @@ import (
 	"os"
 	"reflect"
 	"runtime"
-	"time"
 
+	"github.com/879229629/demo/app"
 	"github.com/gogo/protobuf/proto"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
@@ -207,22 +207,8 @@ func read() {
 }
 
 func main() {
-	a := make([]int, 0, 10)
-	a = append(a, 123)
-	fmt.Printf("a: %d,", a)
-	go read()
-	for i := 0; i < 20; i++ {
-		queue <- fmt.Sprintf("my: %d", i)
-		time.Sleep(time.Millisecond * 100)
-
-	}
-
-	fmt.Println("#####")
-	close(queue)
-
-	time.Sleep(time.Second * 100)
-	fmt.Println("##### exit")
-
+	s := app.Test()
+	fmt.Println(s)
 }
 
 func testerror() (err error) {
