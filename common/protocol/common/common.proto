@@ -1,0 +1,8 @@
+syntax = "proto3";
+package common;
+option go_package = "github.com/879229629/demo/common/protobuf/common";
+
+message Resp {
+	int64 ErrorCode = 1;
+	int64 ErrorMsg = 2;
+} 

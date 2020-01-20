@@ -1,0 +1,10 @@
+syntax = "proto3";
+package order;
+option go_package = "github.com/879229629/demo/common/protobuf/order";
+
+import "protocol/common/common.proto";
+
+message Order {
+	int64 OrderId = 1;
+	common.Resp resp =2;
+} 
